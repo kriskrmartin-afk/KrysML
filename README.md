@@ -51,3 +51,6 @@ This follows the [IET Rules of Conduct](https://www.theiet.org/about/governance/
 Released under the MIT License. See `LICENSE`. Third-party notices are in `OPEN-SOURCE.md`.
 
 Copyright (c) 2026 Kris Martin
+
+
+_Deployment test: GitHub to Netlify, 3 Oct 2026._
