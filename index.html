@@ -4,7 +4,7 @@
   KrysML.com – System & Process Capture
   Copyright (c) 2026 Kris Martin
   License: MIT – Use freely, modify, share.
-  Version: v5.0.1.1
+  Version: v5.1.0
 -->
 
 <html lang="en">
@@ -4335,7 +4335,7 @@ function stubFalse(){return false}module.exports=stubFalse},{}],279:[function(re
       flex: 1;
       display: flex;
       align-items: flex-start;   /* Keep vertical alignment at top */
-      justify-content: center;   /* Change to center horizontally */
+      justify-content: flex-start;
       min-height: 400px;
       background: #ffffff;
       /* Remove padding and border */
@@ -5127,6 +5127,12 @@ function stubFalse(){return false}module.exports=stubFalse},{}],279:[function(re
       <button class="close-btn" onclick="closeModal('releaseModal')">✕</button>
  <h2>📋 Release Notes</h2>
 <p class="subtitle">KrysML.com – System & Process Capture</p>
+<br>
+<p class="subtitle">13 Nov 2026 - v5.1.0</p>
+<ul>
+  <li><strong>Diagram display improvements</strong> – Fixed an issue where the left edge of large diagrams couldn't be scrolled to. Diagrams now centre themselves when they fit within the panel.</li>
+  <li><strong>Cleaner diagnostics</strong> – Internal warning messages tidied up to match how the app is now used.</li>
+</ul>
 <br>
 <p class="subtitle">30 Sept 2026 - v5.0.1.1</p>
 <ul>
@@ -6016,7 +6022,7 @@ if (numberInput) {
       const loopMatch = trimmed.match(/LOOP\s+TO\s+(\d+)/i);
       const endMatch = trimmed.match(/^END:\s*(.*)/i);
       if (loopMatch && endMatch) {
-        console.warn(`Branch at line ${i+1} has both LOOP TO and END – ignoring END`);
+        //console.warn(`Branch at line ${i+1} has both LOOP TO and END – ignoring END`);
         const target = parseInt(loopMatch[1], 10);
         if (target > 0) { currentBranch.loopTarget = target; }
       } else if (loopMatch) {
@@ -6130,7 +6136,7 @@ if (numberInput) {
           if (targetId && nodes.some(n => n.id === targetId)) {
             edges.push({ from: branchId, to: targetId, label: 'Loop' });
           } else {
-            console.warn(`LOOP TO ${branch.loopTarget} – target step not found`);
+            //console.warn(`LOOP TO ${branch.loopTarget} – target step not found`);
           }
         } else if (branch.endLabel) {
           const endId = `${branchId}_end`;
@@ -6147,7 +6153,7 @@ if (numberInput) {
     }
   }
 
-  if (pendingForwardBranches.length > 0) { console.warn('Unmerged forward branches remain at end of script'); }
+  //if (pendingForwardBranches.length > 0) { console.warn('Unmerged forward branches remain at end of script'); }
   const uniqueEdges = [];
   const edgeSet = new Set();
   edges.forEach(e => {
@@ -6376,7 +6382,7 @@ else if (n.type === 'end') {
   });
   svg += `</g>`;
   svg += `</svg>`;
-  return `<div class="diagram-inner" style="transform-origin: top left; display: inline-block;">${svg}</div>`;
+  return `<div class="diagram-inner" style="display: block; width: max-content; margin: 0 auto;">${svg}</div>`;
 }
 
 
@@ -6662,7 +6668,7 @@ function importData(event) {
     });
 
 
-    console.log('KrysML.com v5.0.1.1 ready');
+    console.log('KrysML.com v5.1.0 ready');
 
     // Initialise mobile state
     handleResize();

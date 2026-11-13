@@ -53,4 +53,4 @@ Released under the MIT License. See `LICENSE`. Third-party notices are in `OPEN-
 Copyright (c) 2026 Kris Martin
 
 
-_Deployment test: GitHub to Netlify, 11 Nov 2026._
+Version 5.1.0 released 13th Nov 2026
