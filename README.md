@@ -86,3 +86,5 @@ Copyright (c) 2026 Kris Martin
 
 KrysML.com Version 5.1.0 released 13th Nov 2026
 KrysBPM Version 1.0.0-beta released 20th Nov 2026
+
+Portfolio integration: Added links to the creator's website, [kris-martin.com](https://kris-martin.com/), in the KrysML and KrysBPM footers. 23rd Nov 2026
